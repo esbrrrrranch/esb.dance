@@ -49,6 +49,7 @@ Build esb.dance as a static site deployed through GitHub Pages.
 
 - Use Go's standard `html/template` package, as requested by Michael. Keep editable page templates and assets in `www/`, with shared layout, header, and footer definitions in `templates/`.
 - Generate deployable files into ignored `dist/` through `make build`. GitHub Pages must publish `dist/`, replacing the previous plan to publish `www/` directly.
+- 2026-11-08, agreed: Deploy with a GitHub Actions workflow (`.github/workflows/deploy.yml`) that tests, runs `make build`, and publishes `dist/` on pushes to `main`. The repository Pages source must be set to GitHub Actions.
 - Define navigation once and derive its active state from each page's route. Use the shared footer for the subscription form described below.
 - Use `modd` for source watching and rebuilding, as requested by Michael, and `devd` for serving generated files and browser reloads. Pin both tools through `go.mod`; `make dev` runs `go tool modd`.
 - Preserve routes and page content except for the temporary contact removal agreed below. Render every page before updating output so template errors leave the last successful build available. No Node.js toolchain is required.
@@ -79,5 +80,5 @@ Build esb.dance as a static site deployed through GitHub Pages.
 
 - What Mailchimp integration and contact flow should be configured when contact work resumes?
 - Should the project retain Orpheus Pro and Adobe Garamond Pro through an Adobe Fonts web project, or switch fonts during the design pass?
-- What repository, deployment workflow, and domain configuration will be used for GitHub Pages?
+- What domain configuration will be used for GitHub Pages? The repository and deployment workflow are settled (2026-11-08).
 

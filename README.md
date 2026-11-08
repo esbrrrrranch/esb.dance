@@ -4,7 +4,7 @@ Static site for [esb.dance](https://esb.dance), hosted on GitHub Pages.
 
 ## Current status
 
-The repository contains a static HTML migration of six exported pages with local images, videos, stylesheets, and the downloadable CV. The contact page is temporarily removed. The current design is preserved as the starting point for a design pass. Deployment is not configured yet.
+The repository contains a static HTML migration of six exported pages with local images, videos, stylesheets, and the downloadable CV. The contact page is temporarily removed. The current design is preserved as the starting point for a design pass. GitHub Actions builds and deploys it to GitHub Pages on every push to `main`.
 
 ## Local development
 
@@ -48,7 +48,7 @@ Go downloads and compiles the pinned [modd](https://github.com/cortesi/modd) and
 1. Review the static migration against the original site.
 2. Make the design and content changes we agree on.
 3. Decide on the contact implementation and settle font hosting.
-4. Configure GitHub Pages deployment and move the custom domain after review.
+4. Move the custom domain after review.
 
 ## Editing the site
 
@@ -68,7 +68,7 @@ Pages use Go's `html/template`: each page defines its `title` and `content`, the
 make build
 ```
 
-Without Make, run `go run ./cmd/site`. This renders HTML and copies assets into `dist/`, preserving routes, the homepage redirect, `404.html`, and `.nojekyll`. Publish **`dist/`** through GitHub Pages; `www/` now contains template source and must not be published directly. Deployment configuration is still pending.
+Without Make, run `go run ./cmd/site`. This renders HTML and copies assets into `dist/`, preserving routes, the homepage redirect, `404.html`, and `.nojekyll`. Publish **`dist/`** through GitHub Pages; `www/` now contains template source and must not be published directly. The workflow in `.github/workflows/deploy.yml` runs the tests, builds, and publishes `dist/` on every push to `main`.
 
 The deployment workflow downloads LFS objects before building, so the published artifact contains the actual videos rather than LFS pointers.
 
