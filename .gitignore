@@ -1,0 +1,17 @@
+# Ignore operating system metadata.
+.DS_Store
+Thumbs.db
+
+# Ignore local environment files while retaining example configuration.
+.env
+.env.*
+!.env.example
+
+# Ignore dependency directories and generated output.
+node_modules/
+dist/
+build/
+coverage/
+
+# Ignore local logs.
+*.log
