@@ -16,7 +16,7 @@
     <a class="skip-link" href="#page">Skip to content</a>
     {{template "header" .}}
     {{template "content" .}}
-    {{template "footer" .}}
+    {{if ne .Path "/404.html"}}{{template "footer" .}}{{end}}
   </div>
 </body>
 </html>

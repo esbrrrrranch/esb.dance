@@ -60,7 +60,7 @@ Build esb.dance as a static site deployed through GitHub Pages.
 
 ### 2026-11-08: Add Mailchimp subscriptions
 
-- Use Michael's supplied Mailchimp form action, email and name fields and bot-trap field in the shared footer. Show it on all remaining rendered pages; the legacy homepage alias still redirects.
+- Use Michael's supplied Mailchimp form action, email and name fields and bot-trap field in the shared footer. Show it on all remaining rendered pages except the 404 page (agreed 2026-11-08); the legacy homepage alias still redirects.
 - Style the form in `www/assets/styles.css` using the site's typography and colors. Use native email validation and a standard POST to Mailchimp in a new tab, where Mailchimp handles confirmation and errors. Do not load the embed's unrelated SMS scripts or external stylesheet.
 - Omit the Mailchimp logo and attribution link at Michael's request.
 - Keep the separate contact integration deferred. No live subscription was submitted during implementation.
