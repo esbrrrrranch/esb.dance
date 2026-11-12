@@ -1,30 +1,64 @@
-{{define "footer"}}
 <footer class="site-footer" aria-labelledby="subscribe-heading">
   <div class="subscribe-introduction">
     <h2 id="subscribe-heading">Stay in touch</h2>
     <p>Subscribe for periodic updates.</p>
   </div>
-  <form class="subscribe-form" action="https://inlet-arts.us19.list-manage.com/subscribe/post?u=b7e174131db4d1904c2466ece&amp;id=dc0ef42a69&amp;f_id=005694e3f0" method="post" target="_blank" rel="noopener noreferrer" aria-labelledby="subscribe-heading" aria-describedby="subscribe-note">
+  <form
+    class="subscribe-form"
+    action="https://inlet-arts.us19.list-manage.com/subscribe/post?u=b7e174131db4d1904c2466ece&amp;id=dc0ef42a69&amp;f_id=005694e3f0"
+    method="post"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-labelledby="subscribe-heading"
+    aria-describedby="subscribe-note"
+  >
     <div class="subscribe-field subscribe-email">
-      <label for="subscribe-email">Email address <span aria-hidden="true">*</span></label>
-      <input autocomplete="email" id="subscribe-email" name="EMAIL" required type="email"/>
+      <label for="subscribe-email"
+        >Email address <span aria-hidden="true">*</span></label
+      >
+      <input
+        autocomplete="email"
+        id="subscribe-email"
+        name="EMAIL"
+        required
+        type="email"
+      />
     </div>
     <div class="subscribe-field">
       <label for="subscribe-first-name">First name</label>
-      <input autocomplete="given-name" id="subscribe-first-name" name="FNAME" type="text"/>
+      <input
+        autocomplete="given-name"
+        id="subscribe-first-name"
+        name="FNAME"
+        type="text"
+      />
     </div>
     <div class="subscribe-field">
       <label for="subscribe-last-name">Last name</label>
-      <input autocomplete="family-name" id="subscribe-last-name" name="LNAME" type="text"/>
+      <input
+        autocomplete="family-name"
+        id="subscribe-last-name"
+        name="LNAME"
+        type="text"
+      />
     </div>
     <div class="subscribe-honeypot" aria-hidden="true">
       <label for="subscribe-check">Leave this field empty</label>
-      <input autocomplete="off" id="subscribe-check" name="b_b7e174131db4d1904c2466ece_dc0ef42a69" tabindex="-1" type="text" value=""/>
+      <input
+        autocomplete="off"
+        id="subscribe-check"
+        name="b_b7e174131db4d1904c2466ece_dc0ef42a69"
+        tabindex="-1"
+        type="text"
+        value=""
+      />
     </div>
-    <p class="subscribe-note" id="subscribe-note">* Email is required. Names are optional.<br/>Continue on Mailchimp in a new tab.</p>
+    <p class="subscribe-note" id="subscribe-note">
+      * Email is required. Names are optional.<br />Continue on Mailchimp in a
+      new tab.
+    </p>
     <div class="subscribe-actions">
       <button name="subscribe" type="submit">Subscribe</button>
     </div>
   </form>
 </footer>
-{{end}}

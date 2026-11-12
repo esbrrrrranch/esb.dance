@@ -1,10 +1,16 @@
-.PHONY: build dev test
+.PHONY: build dev format format-check test
 
 build:
-	go run ./cmd/site
+	pnpm build
 
 dev:
-	go tool modd
+	pnpm dev
+
+format:
+	pnpm format
+
+format-check:
+	pnpm format:check
 
 test:
-	go test ./cmd/site
+	pnpm test

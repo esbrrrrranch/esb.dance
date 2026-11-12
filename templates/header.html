@@ -1,20 +1,51 @@
-{{define "header"}}
 <header class="site-header">
   <a aria-label="Emily Schoen Branch home" href="/">
-    <img alt="ESB" class="site-logo" height="94" src="/assets/images/58524cbef9-logo-with-opacity-1-.png" width="94"/>
+    <img
+      alt="ESB"
+      class="site-logo"
+      height="94"
+      src="/assets/images/58524cbef9-logo-with-opacity-1-.png"
+      width="94"
+    />
   </a>
-  <button aria-controls="site-nav" aria-expanded="false" aria-label="Open menu" class="menu-toggle">
+  <button
+    aria-controls="site-nav"
+    aria-expanded="false"
+    aria-label="Open menu"
+    class="menu-toggle"
+  >
     <span aria-hidden="true"></span>
     <span aria-hidden="true"></span>
   </button>
   <nav aria-label="Main navigation" id="site-nav">
-    <a href="/"{{if eq .Path "/"}} aria-current="page"{{end}}>Emily Schoen Branch</a>
-    <a href="/bio/"{{if eq .Path "/bio/"}} aria-current="page"{{end}}>Biography</a>
-    <a href="/teaching/"{{if eq .Path "/teaching/"}} aria-current="page"{{end}}>Teaching</a>
-    <a href="/choreography/"{{if eq .Path "/choreography/"}} aria-current="page"{{end}}>Choreography</a>
-    <a href="/collaborators/"{{if eq .Path "/collaborators/"}} aria-current="page"{{end}}>Collaborators</a>
+    <a href="/" aria-current="{{ 'page' if page.url == '/' else 'false' }}"
+      >Emily Schoen Branch</a
+    >
+    <a
+      href="/bio/"
+      aria-current="{{ 'page' if page.url == '/bio/' else 'false' }}"
+      >Biography</a
+    >
+    <a
+      href="/teaching/"
+      aria-current="{{ 'page' if page.url == '/teaching/' else 'false' }}"
+      >Teaching</a
+    >
+    <a
+      href="/choreography/"
+      aria-current="{{ 'page' if page.url == '/choreography/' else 'false' }}"
+      >Choreography</a
+    >
+    <a
+      href="/collaborators/"
+      aria-current="{{ 'page' if page.url == '/collaborators/' else 'false' }}"
+      >Collaborators</a
+    >
     <div class="nav-social">
-      <a aria-label="Instagram" href="https://www.instagram.com/emily_schoen_branch/">
+      <a
+        aria-label="Instagram"
+        href="https://www.instagram.com/emily_schoen_branch/"
+      >
         <svg aria-hidden="true" viewBox="0 0 24 24">
           <rect height="18" rx="5" width="18" x="3" y="3"></rect>
           <circle cx="12" cy="12" r="4"></circle>
@@ -23,10 +54,11 @@
       </a>
       <a aria-label="Facebook" href="https://www.facebook.com/emily.schoen/">
         <svg aria-hidden="true" class="facebook-icon" viewBox="0 0 24 24">
-          <path d="M14 21v-8h3l.5-3H14V8c0-.9.3-1.5 1.6-1.5H18V3.2c-.4-.1-1.8-.2-3.1-.2C12 3 10 4.8 10 8v2H7v3h3v8z"></path>
+          <path
+            d="M14 21v-8h3l.5-3H14V8c0-.9.3-1.5 1.6-1.5H18V3.2c-.4-.1-1.8-.2-3.1-.2C12 3 10 4.8 10 8v2H7v3h3v8z"
+          ></path>
         </svg>
       </a>
     </div>
   </nav>
 </header>
-{{end}}

@@ -13,6 +13,8 @@ Build esb.dance as a static site deployed through GitHub Pages.
 
 ### 2026-11-07: Add local development tooling
 
+Superseded by the agreed Eleventy migration on 2026-11-11.
+
 - Use `www/` as the static site root, beginning with a plain HTML test page.
 - Use devd for local serving and automatic browser reload through `make dev`.
 - Track devd with a Go module tool directive and commit dependency checksums for reproducible setup without a separate tool installation.
@@ -47,6 +49,8 @@ Build esb.dance as a static site deployed through GitHub Pages.
 
 ### 2026-11-08: Share HTML templates and build static output
 
+The Go builder and development tools are superseded by the agreed Eleventy migration on 2026-11-11. Shared templates, routes, and the deployment directory remain unchanged.
+
 - Use Go's standard `html/template` package, as requested by Michael. Keep editable page templates and assets in `www/`, with shared layout, header, and footer definitions in `templates/`.
 - Generate deployable files into ignored `dist/` through `make build`. GitHub Pages must publish `dist/`, replacing the previous plan to publish `www/` directly.
 - 2026-11-08, agreed: Deploy with a GitHub Actions workflow (`.github/workflows/deploy.yml`) that tests, runs `make build`, and publishes `dist/` on pushes to `main`. The repository Pages source must be set to GitHub Actions.
@@ -75,6 +79,14 @@ Build esb.dance as a static site deployed through GitHub Pages.
 
 - Agreed: Remove the contact page and navigation entry while Michael decides how to implement contact. Remove the homepage link to the old contact form and retain its social messaging links.
 - Keep the shared Mailchimp subscription form available. Restore a contact page once its implementation is settled.
+
+### 2026-11-11: Migrate to Eleventy, Nunjucks, and pnpm
+
+- Agreed: Replace the Go builder, modd, and devd with Eleventy and Nunjucks, managed with pnpm. Keep page content in `www/`, shared HTML templates in `templates/`, and deployment output in `dist/`.
+- Use Node.js 24 or newer and pin pnpm and development dependencies with a lockfile for reproducible local and CI builds.
+- Agreed: Add oxfmt for CSS, HTML, and JavaScript. Preserve whitespace-sensitive imported text with formatter ignore directives.
+- Use Eleventy's development server and clean output at the start of build and development commands. Restart development after deleting routes; the custom Go builder's transactional output behavior is retired.
+- Agreed: Update GitHub Pages deployment to install dependencies with pnpm, check formatting, build, and validate generated output. Retain LFS checkout and deployment on pushes to `main`.
 
 ## Open questions
 

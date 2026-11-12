@@ -1,0 +1,21 @@
+{
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.8",
+    "oxfmt": "0.78.0"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "name": "esb.dance",
+  "packageManager": "pnpm@12.4.1",
+  "private": true,
+  "scripts": {
+    "build": "pnpm clean && eleventy",
+    "clean": "node --input-type=module -e \"import { rmSync } from 'node:fs'; rmSync('dist', { force: true, recursive: true });\"",
+    "dev": "pnpm clean && eleventy --serve",
+    "format": "oxfmt '**/*.{css,html,js}'",
+    "format:check": "oxfmt --check '**/*.{css,html,js}'",
+    "test": "pnpm build && node --test"
+  },
+  "type": "module"
+}
